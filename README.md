@@ -107,9 +107,9 @@ Um projeto completo só ganha vida com uma equipe sintonizada. Conheça as mente
 
 | Avatar | Membro | Função / Especialidade | GitHub |
 | :---: | :--- | :--- | :--- |
-| <img src="https://github.com/github.png" width="40" style="border-radius:50%"/> | [Athyrson Lopes] | Pendente | ... |
-| <img src="https://github.com/github.png" width="40" style="border-radius:50%"/> | [Maria Heloisa] | Pendente | ... |
-| <img src="https://github.com/github.png" width="40" style="border-radius:50%"/> | [Arthur Alcantara] | Pendente | ... |
+| <img src="https://github.com/github.png" width="40" style="border-radius:50%"/> | Athyrson Lopes | Pendente | ... |
+| <img src="https://github.com/github.png" width="40" style="border-radius:50%"/> | Maria Heloisa | Pendente | ... |
+| <img src="https://github.com/github.png" width="40" style="border-radius:50%"/> | Arthur Alcantara | Pendente | ... |
 | <img src="https://github.com/github.png" width="40" style="border-radius:50%"/> | [Nome do Integrante ] | Pendente | ... |
 
 ---
