@@ -111,7 +111,7 @@ Um projeto completo só ganha vida com uma equipe sintonizada. Conheça as mente
 | <img src="https://github.com/github.png" width="40" style="border-radius:50%"/> | Athyrson Lopes | Pendente | ... |
 | <img src="https://github.com/github.png" width="40" style="border-radius:50%"/> | Maria Heloisa | Pendente | ... |
 | <img src="https://github.com/github.png" width="40" style="border-radius:50%"/> | Arthur Alcantara | Pendente | ... |
-| <img src="https://github.com/github.png" width="40" style="border-radius:50%"/> | Nilton Carlos | DEV Backend / Fullstack | NiltonCarlosdawg |
+| <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuFty4-vkjJw2CyyXLkFyRsMO86vJHKFfivA&s" width="40" style="border-radius:50%"/> | Nilton Carlos | DEV Backend / Fullstack | NiltonCarlosdawg |
 
 ---
 
