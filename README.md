@@ -46,7 +46,7 @@ Aqui está o mapeamento de recursos que estão sendo construídos ou planejados 
 Antes de começar, você vai precisar ter instalado em sua máquina:
 * **Ambiente de Execução / Linguagem:** ...
 * **Controle de Versão:** ...
-* **Gerenciador de Pacotes:** ...
+* **Gerenciador de Pacotes:*BUN* ...
 
 ### 🚀 Passos para Instalação
 
@@ -62,6 +62,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina:
 
 3. Instale todas as dependências necessárias:
    ```bash
+         bun install
    ...
    ```
 
@@ -110,7 +111,7 @@ Um projeto completo só ganha vida com uma equipe sintonizada. Conheça as mente
 | <img src="https://github.com/github.png" width="40" style="border-radius:50%"/> | Athyrson Lopes | Pendente | ... |
 | <img src="https://github.com/github.png" width="40" style="border-radius:50%"/> | Maria Heloisa | Pendente | ... |
 | <img src="https://github.com/github.png" width="40" style="border-radius:50%"/> | Arthur Alcantara | Pendente | ... |
-| <img src="https://github.com/github.png" width="40" style="border-radius:50%"/> | [Nome do Integrante ] | Pendente | ... |
+| <img src="https://github.com/github.png" width="40" style="border-radius:50%"/> | Nilton Carlos | DEV Backend / Fullstack | NiltonCarlosdawg |
 
 ---
 
