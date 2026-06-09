@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Comunidade-Juninhos-7B2CBF?style=for-the-badge&logo=discord&logoColor=white" alt="Juninhos Community" />
-  <img src="https://img.shields.io/badge/Status-[Em%Andamento]-orange?style=for-the-badge" alt="Status" />
+  <img src="https://img.shields.io/badge/Status-[Loading]-orange?style=for-the-badge" alt="Status" />
 </p>
 
 ---
