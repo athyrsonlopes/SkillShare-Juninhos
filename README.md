@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Comunidade-Juninhos-7B2CBF?style=for-the-badge&logo=discord&logoColor=white" alt="Juninhos Community" />
-  <img src="https://img.shields.io/badge/Status-[Inserir%20Status]-orange?style=for-the-badge" alt="Status" />
+  <img src="https://img.shields.io/badge/Status-[Em%Andamento]-orange?style=for-the-badge" alt="Status" />
 </p>
 
 ---
@@ -32,7 +32,7 @@ O projeto foi estruturado seguindo os conceitos de **modularização**, alta coe
 
 Aqui está o mapeamento de recursos que estão sendo construídos ou planejados para o projeto:
 
-- [ ] 🔐 **Funcionalidade 1:** [Breve descrição do recurso ou módulo]
+- [ ] 🔐 **auth + user:** [perfil de usuário, cadastro e login]
 - [ ] 👥 **Funcionalidade 2:** [Breve descrição do recurso ou módulo]
 - [ ] ⚙️ **Funcionalidade 3:** [Breve descrição do recurso ou módulo]
 - [ ] 📊 **Funcionalidade 4:** [Breve descrição do recurso ou módulo]
