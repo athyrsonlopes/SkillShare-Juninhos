@@ -1,37 +1,36 @@
-import { Request, Response, NextFunction } from "express";
-import jwt from "jsonwebtoken";
-import { JwtPayload, AuthRequest } from "../types";
+import { Response, NextFunction } from "express";
+import { Role } from "@prisma/client";
+import { forbidden, unauthorized } from "../lib/errors";
+import { AuthRequest, JwtPayload } from "../types";
+import { extractBearerToken, resolveAuthenticatedPayload } from "../lib/auth-token";
 
-const JWT_SECRET = process.env.JWT_SECRET || "fallback-secret";
-
-export function authenticate(req: AuthRequest, res: Response, next: NextFunction) {
-  const header = req.headers.authorization;
-  if (!header || !header.startsWith("Bearer ")) {
-    res.status(401).json({ error: "Token não fornecido" });
+export async function authenticate(req: AuthRequest, _res: Response, next: NextFunction) {
+  const token = extractBearerToken(req.headers.authorization);
+  if (!token) {
+    next(unauthorized("Token não fornecido"));
     return;
   }
 
-  const token = header.split(" ")[1];
-
   try {
-    const decoded = jwt.verify(token, JWT_SECRET) as JwtPayload;
-    req.user = decoded;
+    req.user = await resolveAuthenticatedPayload(token);
     next();
   } catch {
-    res.status(401).json({ error: "Token inválido ou expirado" });
+    next(unauthorized("Token inválido ou expirado"));
   }
 }
 
-export function authorize(...roles: string[]) {
-  return (req: AuthRequest, res: Response, next: NextFunction) => {
+export function authorize(...roles: Role[]) {
+  return (req: AuthRequest, _res: Response, next: NextFunction) => {
     if (!req.user) {
-      res.status(401).json({ error: "Não autenticado" });
+      next(unauthorized());
       return;
     }
+
     if (!roles.includes(req.user.role)) {
-      res.status(403).json({ error: "Sem permissão" });
+      next(forbidden("Sem permissão"));
       return;
     }
+
     next();
   };
 }
