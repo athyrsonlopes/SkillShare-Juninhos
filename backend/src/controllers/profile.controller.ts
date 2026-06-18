@@ -2,29 +2,22 @@ import { Response } from "express";
 import * as profileService from "../services/profile.service";
 import { AuthRequest } from "../types";
 
-export async function getProfile(req: AuthRequest, res: Response) {
-  try {
-    const profile = await profileService.getProfile(req.user!.userId);
-    res.json(profile);
-  } catch (err: any) {
-    res.status(404).json({ error: err.message });
-  }
+export async function getMyProfile(req: AuthRequest, res: Response) {
+  const profile = await profileService.getProfile(req.user!.userId);
+  res.json(profile);
+}
+
+export async function getProfileById(req: AuthRequest, res: Response) {
+  const profile = await profileService.getProfileById(req.user!.userId, String(req.params.id));
+  res.json(profile);
 }
 
 export async function updateProfile(req: AuthRequest, res: Response) {
-  try {
-    const profile = await profileService.updateProfile(req.user!.userId, req.body);
-    res.json(profile);
-  } catch (err: any) {
-    res.status(400).json({ error: err.message });
-  }
+  const profile = await profileService.updateProfile(req.user!.userId, req.body);
+  res.json(profile);
 }
 
-export async function updateUser(req: AuthRequest, res: Response) {
-  try {
-    const user = await profileService.updateUser(req.user!.userId, req.body);
-    res.json(user);
-  } catch (err: any) {
-    res.status(400).json({ error: err.message });
-  }
+export async function uploadAvatar(req: AuthRequest, res: Response) {
+  const profile = await profileService.uploadAvatar(req.user!.userId, req.body);
+  res.json(profile);
 }

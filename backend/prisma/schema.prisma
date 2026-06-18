@@ -9,37 +9,291 @@ datasource db {
 
 enum Role {
   USER
+  PROFESSOR
   ADMIN
 }
 
-model User {
-  id        String   @id @default(uuid())
-  name      String
-  email     String   @unique
-  password  String
-  role      Role     @default(USER)
-  avatar    String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+enum SkillKind {
+  STUDY
+  TEACH
+}
 
-  profile Profile?
+enum SkillLevel {
+  INICIANTE
+  INTERMEDIARIO
+  AVANCADO
+}
+
+enum SlotStatus {
+  OPEN
+  RESERVED
+  BOOKED
+  CANCELLED
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum OpenRequestStatus {
+  OPEN
+  MATCHED
+  CANCELLED
+}
+
+enum SessionStatus {
+  SCHEDULED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum FriendshipStatus {
+  ACTIVE
+  BLOCKED
+}
+
+enum ChannelType {
+  BOOKING
+  OPEN_REQUEST
+  FRIENDSHIP
+}
+
+model User {
+  id            String        @id @default(uuid())
+  name          String
+  email         String        @unique
+  password      String
+  role          Role          @default(USER)
+  avatar        String?
+  avgRating     Float         @default(0)
+  ratingsCount  Int           @default(0)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  profile               Profile?
+  skills                UserSkill[]
+  mentorSlots           AvailabilitySlot[] @relation("MentorSlots")
+  openRequestsCreated   OpenRequest[] @relation("OpenRequestCreator")
+  openRequestsMatched   OpenRequest[] @relation("OpenRequestMatcher")
+  bookingsAsStudent     Booking[]    @relation("StudentBookings")
+  bookingsAsTeacher     Booking[]    @relation("TeacherBookings")
+  reviewsWritten        Review[]     @relation("WrittenReviews")
+  reviewsReceived       Review[]     @relation("ReceivedReviews")
+  friendshipsAsUserA    Friendship[]  @relation("FriendshipUserA")
+  friendshipsAsUserB    Friendship[]  @relation("FriendshipUserB")
+  chatChannelsAsUserA    ChatChannel[] @relation("ChatChannelUserA")
+  chatChannelsAsUserB    ChatChannel[] @relation("ChatChannelUserB")
+  chatMessages          ChatMessage[]
+  authSessions          AuthSession[]
 
   @@map("users")
 }
 
 model Profile {
-  id              String  @id @default(uuid())
-  bio             String?
-  studyPreferences String?
-  contentToStudy  String?
-  contentToTeach  String?
-  languages       String?
-  level           String?
-  lessonsMentored Int     @default(0)
-  lessonsStudied  Int     @default(0)
-  progress        Float   @default(0)
-  userId          String  @unique
-  user            User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id                String   @id @default(uuid())
+  userId            String   @unique
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  bio               String?
+  studyPreferences  String[]  @default([])
+  contentToStudy    String?
+  contentToTeach    String?
+  lessonsMentored   Int       @default(0)
+  lessonsStudied    Int       @default(0)
+  progress          Float     @default(0)
+  matchCount        Int       @default(0)
+  lastMatchAt       DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
 
   @@map("profiles")
+}
+
+model UserSkill {
+  id          String     @id @default(uuid())
+  userId      String
+  user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name        String
+  kind        SkillKind
+  level       SkillLevel
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  @@unique([userId, name, kind])
+  @@index([name, kind, level])
+  @@map("user_skills")
+}
+
+model AvailabilitySlot {
+  id          String     @id @default(uuid())
+  mentorId    String
+  mentor      User       @relation("MentorSlots", fields: [mentorId], references: [id], onDelete: Cascade)
+  skill       String
+  level       SkillLevel
+  startsAt    DateTime
+  endsAt      DateTime
+  status      SlotStatus @default(OPEN)
+  notes       String?
+  bookingId   String?    @unique
+  booking     Booking?   @relation("SlotBooking", fields: [bookingId], references: [id], onDelete: SetNull)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  @@index([mentorId, skill, level, status])
+  @@map("availability_slots")
+}
+
+model OpenRequest {
+  id              String            @id @default(uuid())
+  creatorId       String
+  creator         User              @relation("OpenRequestCreator", fields: [creatorId], references: [id], onDelete: Cascade)
+  skill           String
+  level           SkillLevel
+  preferredDate   DateTime?
+  notes           String?
+  status          OpenRequestStatus @default(OPEN)
+  matchedById     String?
+  matchedBy       User?             @relation("OpenRequestMatcher", fields: [matchedById], references: [id], onDelete: SetNull)
+  matchedAt       DateTime?
+  booking         Booking?          @relation("OpenRequestBooking")
+  chatChannel     ChatChannel?      @relation("OpenRequestChannel")
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  @@index([skill, level, status])
+  @@map("open_requests")
+}
+
+model Booking {
+  id                  String        @id @default(uuid())
+  studentId           String
+  student             User          @relation("StudentBookings", fields: [studentId], references: [id], onDelete: Cascade)
+  teacherId           String
+  teacher             User          @relation("TeacherBookings", fields: [teacherId], references: [id], onDelete: Cascade)
+  slotId              String?       @unique
+  slot                AvailabilitySlot? @relation("SlotBooking")
+  openRequestId       String?       @unique
+  openRequest         OpenRequest?  @relation("OpenRequestBooking", fields: [openRequestId], references: [id], onDelete: SetNull)
+  skill               String
+  notes               String?
+  status              BookingStatus @default(PENDING)
+  scheduledFor        DateTime?
+  meetLink            String?
+  confirmedAt         DateTime?
+  cancelledAt         DateTime?
+  completedAt         DateTime?
+  durationMinutes     Int?
+  reminder24hSentAt    DateTime?
+  reminder1hSentAt     DateTime?
+  reviewReminderSentAt DateTime?
+  session             Session?      @relation("BookingSession")
+  chatChannel         ChatChannel?  @relation("BookingChannel")
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  @@index([studentId, teacherId, status])
+  @@index([scheduledFor, status])
+  @@map("bookings")
+}
+
+model Session {
+  id            String       @id @default(uuid())
+  bookingId     String       @unique
+  booking       Booking      @relation("BookingSession", fields: [bookingId], references: [id], onDelete: Cascade)
+  status        SessionStatus @default(SCHEDULED)
+  meetLink      String?
+  startedAt     DateTime?
+  endedAt       DateTime?
+  durationMinutes Int?
+  reviews       Review[]
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  @@index([status, startedAt])
+  @@map("sessions")
+}
+
+model Review {
+  id          String   @id @default(uuid())
+  sessionId   String
+  session     Session  @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  reviewerId  String
+  reviewer    User     @relation("WrittenReviews", fields: [reviewerId], references: [id], onDelete: Cascade)
+  mentorId    String
+  mentor      User     @relation("ReceivedReviews", fields: [mentorId], references: [id], onDelete: Cascade)
+  rating      Int
+  comment     String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([sessionId, reviewerId])
+  @@index([mentorId, rating])
+  @@map("reviews")
+}
+
+model Friendship {
+  id          String           @id @default(uuid())
+  userAId     String
+  userA       User             @relation("FriendshipUserA", fields: [userAId], references: [id], onDelete: Cascade)
+  userBId     String
+  userB       User             @relation("FriendshipUserB", fields: [userBId], references: [id], onDelete: Cascade)
+  status      FriendshipStatus @default(ACTIVE)
+  channel     ChatChannel?     @relation("FriendshipChannel")
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  @@unique([userAId, userBId])
+  @@map("friendships")
+}
+
+model ChatChannel {
+  id            String      @id @default(uuid())
+  type          ChannelType
+  userAId       String
+  userA         User        @relation("ChatChannelUserA", fields: [userAId], references: [id], onDelete: Cascade)
+  userBId       String
+  userB         User        @relation("ChatChannelUserB", fields: [userBId], references: [id], onDelete: Cascade)
+  bookingId     String?     @unique
+  booking       Booking?    @relation("BookingChannel", fields: [bookingId], references: [id], onDelete: SetNull)
+  openRequestId String?     @unique
+  openRequest   OpenRequest? @relation("OpenRequestChannel", fields: [openRequestId], references: [id], onDelete: SetNull)
+  friendshipId  String?     @unique
+  friendship    Friendship? @relation("FriendshipChannel", fields: [friendshipId], references: [id], onDelete: SetNull)
+  messages      ChatMessage[]
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  @@index([userAId, userBId])
+  @@map("chat_channels")
+}
+
+model ChatMessage {
+  id          String      @id @default(uuid())
+  channelId   String
+  channel     ChatChannel @relation(fields: [channelId], references: [id], onDelete: Cascade)
+  senderId    String
+  sender      User        @relation(fields: [senderId], references: [id], onDelete: Cascade)
+  body        String
+  createdAt   DateTime    @default(now())
+  readAt      DateTime?
+
+  @@index([channelId, createdAt])
+  @@map("chat_messages")
+}
+
+model AuthSession {
+  id          String   @id @default(uuid())
+  jti         String   @unique
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  revokedAt   DateTime?
+  expiresAt   DateTime
+  createdAt   DateTime @default(now())
+
+  @@index([userId, expiresAt])
+  @@map("auth_sessions")
 }
