@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Perfil Público | DUO
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/perfil-publico.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- MENU LATERAL -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+            DUO
+        </div>
+
+        <nav>
+
+            <a href="dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Início</span>
+            </a>
+
+            <a href="matches.html" class="active">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>Buscar Matches</span>
+            </a>
+
+            <a href="agendamentos.html">
+                <i class="fa-solid fa-calendar"></i>
+                <span>Agendamentos</span>
+            </a>
+
+            <a href="aulas.html">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Aulas</span>
+            </a>
+
+            <a href="amigos.html">
+                <i class="fa-solid fa-user-group"></i>
+                <span>Amigos</span>
+            </a>
+
+            <a href="chat.html">
+                <i class="fa-regular fa-message"></i>
+                <span>Mensagens</span>
+            </a>
+
+            <a href="progresso.html">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Progresso</span>
+            </a>
+
+            <a href="perfil.html">
+                <i class="fa-regular fa-user"></i>
+                <span>Perfil</span>
+            </a>
+
+            <a href="configuracoes.html">
+                <i class="fa-solid fa-gear"></i>
+                <span>Configurações</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- CONTEÚDO -->
+
+    <main class="main">
+
+        <!-- TOPO -->
+
+        <header class="topbar">
+
+            <div class="left-top">
+
+                <button id="toggleMenu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+            </div>
+
+            <div class="user-top">
+
+                <div class="user-mini">
+
+                    <img
+                        id="fotoMini"
+                        src="https://i.pravatar.cc/50"
+                        alt="Usuário">
+
+                    <div>
+
+                        <strong id="nomeMini">
+                            Usuário
+                        </strong>
+
+                        <p id="tipoMini">
+                            Professor
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- VOLTAR -->
+
+        <div class="voltar-container">
+
+            <a
+                href="resultado-match.html"
+                class="btn-voltar">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Voltar para Resultados
+
+            </a>
+
+        </div>
+
+        <!-- PERFIL -->
+
+        <section class="perfil-header">
+
+            <div class="perfil-info">
+
+                <img
+                    id="fotoPerfil"
+                    src="https://i.pravatar.cc/150"
+                    alt="Perfil">
+
+                <div class="perfil-dados">
+
+                    <h1 id="nomePerfil">
+                        Carregando...
+                    </h1>
+
+                    <span
+                        id="tipoPerfil"
+                        class="tag-usuario">
+                    </span>
+
+                    <p id="cidadePerfil"></p>
+
+                    <p
+    id="bioPerfil"
+    class="bio-perfil">
+
+    Desenvolvedora Full Stack e mentora.
+    Ajudo alunos em programação,
+    carreira e estudos.
+
+</p>
+
+
+                    <p id="bioPerfil"></p>
+
+                </div>
+
+            </div>
+
+            <div class="compatibilidade-card">
+
+                <h3>
+                    Compatibilidade
+                </h3>
+
+                <div class="compatibilidade-numero">
+
+                    92%
+
+                </div>
+
+                <p>
+                    Compatível com você
+                </p>
+
+                <ul>
+
+                    <li>
+                        ✓ Mesmo período
+                    </li>
+
+                    <li>
+                        ✓ Dias compatíveis
+                    </li>
+
+                    <li>
+                        ✓ Interesse semelhante
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+        <!-- AÇÕES -->
+
+        <div class="perfil-actions">
+
+            <button class="btn-conectar">
+
+                Conectar
+
+            </button>
+
+            <button class="btn-agendar">
+
+                Agendar Sessão
+
+            </button>
+
+        </div>
+
+        <!-- ABAS -->
+
+        <section class="tabs">
+
+            <button
+                class="tab active"
+                data-tab="sobre">
+
+                Sobre mim
+
+            </button>
+
+            <button
+                class="tab"
+                data-tab="estudo">
+
+                Conteúdos que estudo
+
+            </button>
+
+            <button
+                class="tab"
+                data-tab="leciono">
+
+                Conteúdos que leciono
+
+            </button>
+
+            <button
+                class="tab"
+                data-tab="tecnologias">
+
+                Tecnologias
+
+            </button>
+
+            <button
+                class="tab"
+                data-tab="avaliacoes">
+
+                Avaliações
+
+            </button>
+
+        </section>
+
+        <!-- CONTEÚDO DAS ABAS -->
+
+        <div class="tab-content">
+
+            <div
+                id="sobre"
+                class="tab-pane active">
+
+                <section class="cards">
+
+                    <div class="card">
+
+                        <h3>
+                            Preferências de estudo
+                        </h3>
+
+                        <div id="preferencias">
+                        </div>
+
+                        <p class="objetivo">
+
+                            Objetivo Atual:
+
+                            <span id="objetivoAtual">
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h3>
+                            Áreas de Interesse
+                        </h3>
+
+                        <div id="interesses">
+                        </div>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h3>
+                            Disponibilidade
+                        </h3>
+
+                        <div id="disponibilidade">
+                        </div>
+
+                        <div class="nivel">
+
+                            <strong>
+                                Nível Geral
+                            </strong>
+
+                            <p id="nivelGeral">
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+            <div
+                id="estudo"
+                class="tab-pane">
+
+                <div class="card-full">
+
+                    <h3>
+                        Conteúdos que estuda
+                    </h3>
+
+                    <div id="conteudosEstudo">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div
+                id="leciono"
+                class="tab-pane">
+
+                <div class="card-full">
+
+                    <h3>
+                        Conteúdos que leciona
+                    </h3>
+
+                    <div id="conteudosLeciono">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div
+                id="tecnologias"
+                class="tab-pane">
+
+                <div class="card-full">
+
+                    <h3>
+                        Tecnologias
+                    </h3>
+
+                    <div id="listaTecnologias">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div
+                id="avaliacoes"
+                class="tab-pane">
+
+                <div class="card-full">
+
+                    <h3>
+                        Avaliações
+                    </h3>
+
+                    <div class="avaliacao">
+
+                        ⭐⭐⭐⭐⭐
+
+                        <p>
+                            Excelente professora.
+                        </p>
+
+                    </div>
+
+                    <div class="avaliacao">
+
+                        ⭐⭐⭐⭐⭐
+
+                        <p>
+                            Muito paciente e explica muito bem.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="js/perfil-publico.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Agendamentos | DUO</title>
+
+    <link rel="stylesheet" href="css/agendamentos.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- MENU -->
+
+      <aside class="sidebar" id="sidebar">
+        <div class="logo">DUO</div>
+
+        <nav>
+          <a href="dashboard.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Início</span>
+          </a>
+
+          <a href="matches.html">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Buscar Matches</span>
+          </a>
+
+          <a href="agendamentos.html" class="active">
+            <i class="fa-solid fa-calendar"></i>
+            <span>Agendamentos</span>
+          </a>
+
+          <a href="aulas.html">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>Aulas</span>
+          </a>
+
+          <a href="amigos.html">
+            <i class="fa-solid fa-user-group"></i>
+            <span>Amigos</span>
+          </a>
+
+          <a href="mensagens.html">
+            <i class="fa-regular fa-message"></i>
+            <span>Mensagens</span>
+          </a>
+
+          <a href="progresso.html">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Progresso</span>
+          </a>
+
+          <a href="perfil.html">
+            <i class="fa-regular fa-user"></i>
+            <span>Perfil</span>
+          </a>
+
+          <a href="configuracoes.html">
+            <i class="fa-solid fa-gear"></i>
+            <span>Configurações</span>
+          </a>
+        </nav>
+      </aside>
+
+      <!-- MAIN -->
+
+      <main class="main">
+        <!-- TOPO -->
+
+        <header class="topbar">
+          <div class="left-top">
+            <button id="toggleMenu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <h2>Agendamentos</h2>
+          </div>
+        </header>
+
+        <!-- ABAS -->
+
+        <section class="tabs">
+          <button class="tab active" data-tab="criar">Criar Agendamento</button>
+
+          <button class="tab" data-tab="disponiveis">
+            Agendamentos Disponíveis
+          </button>
+
+          <button class="tab" data-tab="aulas">Aulas Agendadas</button>
+        </section>
+
+        <!-- CRIAR -->
+
+        <section id="criar" class="tab-pane active">
+          <div class="card-form">
+            <h2>Criar Agendamento</h2>
+
+            <div class="campo">
+              <label> Título da Aula </label>
+
+              <input type="text" placeholder="Ex: React Básico" />
+            </div>
+
+            <div class="campo">
+              <label> Assunto </label>
+
+              <select>
+                <option>Tecnologia</option>
+                <option>Idiomas</option>
+                <option>Matemática</option>
+                <option>Faculdade</option>
+              </select>
+            </div>
+
+            <div class="linha">
+              <div class="campo">
+                <label>Data</label>
+
+                <input type="date" />
+              </div>
+
+              <div class="campo">
+                <label>Horário</label>
+
+                <input type="time" />
+              </div>
+            </div>
+
+            <div class="campo">
+              <label> Duração </label>
+
+              <select>
+                <option>30 minutos</option>
+                <option>1 hora</option>
+                <option>2 horas</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <label> Descrição </label>
+
+              <textarea rows="4"></textarea>
+            </div>
+
+            <button class="btn-primary">Salvar Agendamento</button>
+          </div>
+        </section>
+
+        <!-- DISPONIVEIS -->
+
+        <section id="disponiveis" class="tab-pane">
+          <div class="filtros">
+            <input
+              type="text"
+              placeholder="Buscar por assunto, habilidade ou nome..."
+            />
+
+            <select>
+              <option>Todos</option>
+              <option>Aluno</option>
+              <option>Professor</option>
+            </select>
+
+            <select>
+              <option>Todos os assuntos</option>
+            </select>
+
+            <select>
+              <option>Qualquer horário</option>
+            </select>
+
+            <button class="btn-secondary">Filtrar</button>
+          </div>
+
+          <h2 class="titulo-lista">Disponíveis para estudar</h2>
+
+          <div id="listaDisponiveis"></div>
+        </section>
+
+        <!-- AULAS -->
+
+        <section id="aulas" class="tab-pane">
+          <h2 class="titulo-lista">Minhas Aulas Agendadas</h2>
+
+          <div id="listaAulas"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/agendamentos.js"></script>
+  </body>
+</html>

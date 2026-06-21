@@ -1,0 +1,1 @@
+console.log("DUO carregado com sucesso!");

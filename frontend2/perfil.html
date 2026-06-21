@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil | DUO</title>
+
+    <link rel="stylesheet" href="css/perfil.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- MENU LATERAL -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+            DUO
+        </div>
+
+        <nav>
+
+            <a href="dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Início</span>
+            </a>
+
+            <a href="matches.html">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>Buscar Matches</span>
+            </a>
+
+            <a href="agendamentos.html">
+                <i class="fa-solid fa-calendar"></i>
+                <span>Agendamentos</span>
+            </a>
+
+            <a href="aulas.html">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Aulas</span>
+            </a>
+
+            <a href="amigos.html">
+                <i class="fa-solid fa-user-group"></i>
+                <span>Amigos</span>
+            </a>
+
+            <a href="chat.html">
+                <i class="fa-regular fa-message"></i>
+                <span>Mensagens</span>
+            </a>
+
+            <a href="progresso.html">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Progresso</span>
+            </a>
+
+            <a href="perfil.html" class="active">
+                <i class="fa-regular fa-user"></i>
+                <span>Perfil</span>
+            </a>
+
+            <a href="configuracoes.html">
+                <i class="fa-solid fa-gear"></i>
+                <span>Configurações</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- CONTEÚDO -->
+
+    <main class="main">
+
+        <!-- TOPO -->
+
+        <header class="topbar">
+
+            <div class="left-top">
+
+                <button id="toggleMenu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <input
+                    type="text"
+                    placeholder="Buscar..."
+                    class="search"
+                >
+
+            </div>
+
+            <div class="user-top">
+
+                <i class="fa-regular fa-bell"></i>
+
+                <div class="user-mini">
+
+                    <img
+                        id="fotoMini"
+                        src="https://i.pravatar.cc/50"
+                        alt="Usuário">
+
+                    <div>
+                        <strong id="nomeMini">
+                            Usuário
+                        </strong>
+
+                        <p id="tipoMini">
+                            Estudante
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- PERFIL -->
+
+        <section class="perfil-header">
+
+            <div class="perfil-info">
+
+                <img
+                    id="fotoPerfil"
+                    src="https://i.pravatar.cc/150"
+                    alt="Perfil">
+
+                <div class="perfil-dados">
+
+                    <h1 id="nomePerfil">
+                        Carregando...
+                    </h1>
+
+                    <span
+                        id="tipoPerfil"
+                        class="tag-usuario">
+                    </span>
+
+                    <p id="cidadePerfil"></p>
+
+                    <p id="bioPerfil"></p>
+
+                </div>
+
+            </div>
+
+            <div class="resumo-card">
+
+                <div class="resumo-item">
+
+                    <strong id="aulas">
+                        0
+                    </strong>
+
+                    <span>
+                        Aulas
+                    </span>
+
+                </div>
+
+                <div class="resumo-item">
+                    
+                    <span>
+                        Matches
+                    </span>
+
+                </div>
+
+                <div class="resumo-item">
+
+                    <strong id="horas">
+                        0h
+                    </strong>
+
+                    <span>
+                        Horas
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="perfil-actions">
+
+            <a href="editar-perfil.html" class="btn-editar">
+                Editar Perfil
+            </a>
+
+        </div>
+
+        <!-- ABAS -->
+
+        <!-- ABAS -->
+
+<section class="tabs">
+
+    <button class="tab active" data-tab="sobre">
+        Sobre mim
+    </button>
+
+    <button class="tab" data-tab="estudo">
+        Conteúdos que estudo
+    </button>
+
+    <button class="tab" data-tab="leciono">
+        Conteúdos que leciono
+    </button>
+
+    <button class="tab" data-tab="tecnologias">
+        Tecnologias
+    </button>
+
+    <button class="tab" data-tab="matches">
+        Matches
+    </button>
+
+</section>
+
+<!-- CONTEÚDO DAS ABAS -->
+
+<div class="tab-content">
+
+    <!-- SOBRE MIM -->
+
+    <div id="sobre" class="tab-pane active">
+
+        <section class="cards">
+
+            <div class="card">
+
+                <h3>
+                    Preferências de estudo
+                </h3>
+
+                <div id="preferencias"></div>
+
+                <p class="objetivo">
+                    Objetivo Atual:
+                    <span id="objetivoAtual"></span>
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    Áreas de Interesse
+                </h3>
+
+                <div id="interesses"></div>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    Disponibilidade
+                </h3>
+
+                <div id="disponibilidade"></div>
+
+                <div class="nivel">
+
+                    <strong>
+                        Nível Geral
+                    </strong>
+
+                    <p id="nivelGeral"></p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- ESTUDO -->
+
+    <div id="estudo" class="tab-pane">
+
+        <div class="card-full">
+
+            <h3>
+                Conteúdos que estou estudando
+            </h3>
+
+            <div id="conteudosEstudo">
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- LECIONO -->
+
+    <div id="leciono" class="tab-pane">
+
+        <div class="card-full">
+
+            <h3>
+                Conteúdos que leciono
+            </h3>
+
+            <div id="conteudosLeciono">
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- TECNOLOGIAS -->
+
+    <div id="tecnologias" class="tab-pane">
+
+        <div class="card-full">
+
+            <h3>
+                Tecnologias dominadas
+            </h3>
+
+            <div id="listaTecnologias">
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- MATCHES -->
+
+    <div id="matches" class="tab-pane">
+
+
+    <div class="card-full">
+
+        <div class="matches-header">
+
+            <h3>Meus Matches</h3>
+
+            <div class="match-counter">
+
+                <strong id="totalMatches">
+                    0
+                </strong>
+
+                Matches
+
+            </div>
+
+        </div>
+
+        <div id="listaMatches"></div>
+
+    </div>
+
+</div>
+    </main>
+
+</div>
+
+<script src="js/perfil.js"></script>
+
+</body>
+</html>

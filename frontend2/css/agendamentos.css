@@ -1,0 +1,354 @@
+/* ==========================
+   RESET
+========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f5f7fa;
+}
+
+/* ==========================
+   ESTRUTURA
+========================== */
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ==========================
+   SIDEBAR
+========================== */
+
+.sidebar {
+  width: 250px;
+  min-width: 250px;
+  background: white;
+  border-right: 1px solid #ddd;
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.sidebar.closed {
+  width: 0;
+  min-width: 0;
+  border: none;
+}
+
+.logo {
+  padding: 25px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #255380;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 15px 25px;
+
+  text-decoration: none;
+  color: #333;
+
+  transition: 0.3s;
+}
+
+.sidebar nav a:hover {
+  background: #f5f7fa;
+}
+
+.sidebar nav a.active {
+  background: #edf4fb;
+  color: #255380;
+}
+
+/* ==========================
+   MAIN
+========================== */
+
+.main {
+  flex: 1;
+}
+
+/* ==========================
+   TOPBAR
+========================== */
+
+.topbar {
+  background: white;
+  border-bottom: 1px solid #ddd;
+  padding: 20px 30px;
+}
+
+.left-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#toggleMenu {
+  border: none;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ==========================
+   ABAS
+========================== */
+
+.tabs {
+  display: flex;
+  gap: 20px;
+  padding: 25px 35px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tab {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.tab.active {
+  color: #255380;
+  font-weight: bold;
+}
+
+/* ==========================
+   PANES
+========================== */
+
+.tab-pane {
+  display: none;
+  padding: 35px;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+/* ==========================
+   FORM
+========================== */
+
+.card-form {
+  background: white;
+  max-width: 700px;
+
+  border-radius: 12px;
+  padding: 30px;
+
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+}
+
+.card-form h2 {
+  margin-bottom: 25px;
+  color: #255380;
+}
+
+.campo {
+  margin-bottom: 20px;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  padding: 12px;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.linha {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.btn-primary {
+  border: none;
+  background: #255380;
+  color: white;
+
+  padding: 14px 20px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.btn-secondary {
+  border: none;
+
+  background: #edf4fb;
+
+  color: #255380;
+
+  padding: 12px 18px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+/* ==========================
+   FILTROS
+========================== */
+
+.filtros {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.filtros input,
+.filtros select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.filtros input {
+  min-width: 280px;
+}
+
+/* ==========================
+   LISTAS
+========================== */
+
+.titulo-lista {
+  margin-bottom: 25px;
+}
+
+#listaDisponiveis,
+#listaAulas {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ==========================
+   CARDS
+========================== */
+
+.card-agendamento {
+  background: white;
+
+  border-radius: 12px;
+
+  padding: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+}
+
+.card-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.card-left img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.card-info h3 {
+  margin-bottom: 5px;
+}
+
+.card-info p {
+  color: #666;
+  font-size: 14px;
+}
+
+.tags {
+  margin-top: 10px;
+}
+
+.tag {
+  display: inline-block;
+
+  background: #edf4fb;
+  color: #255380;
+
+  padding: 4px 8px;
+
+  border-radius: 20px;
+
+  margin-right: 5px;
+
+  font-size: 12px;
+}
+
+.card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.disponivel {
+  color: #58a55c;
+  font-weight: bold;
+}
+
+.acoes {
+  display: flex;
+  gap: 10px;
+}
+
+/* ==========================
+   RESPONSIVO
+========================== */
+
+@media (max-width: 900px) {
+  .card-agendamento {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .card-right {
+    align-items: flex-start;
+  }
+
+  .linha {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    z-index: 999;
+    height: 100%;
+  }
+}

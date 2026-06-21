@@ -1,0 +1,413 @@
+/* ==========================
+   RESET
+========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f7fa;
+}
+
+/* ==========================
+   ESTRUTURA
+========================== */
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ==========================
+   SIDEBAR
+========================== */
+
+.sidebar {
+  width: 250px;
+  min-width: 250px;
+
+  background: white;
+
+  border-right: 1px solid #ddd;
+
+  transition: 0.3s;
+
+  overflow: hidden;
+}
+
+.sidebar.closed {
+  width: 0;
+
+  min-width: 0;
+
+  border: none;
+}
+
+.logo {
+  padding: 25px;
+
+  font-size: 32px;
+
+  font-weight: bold;
+
+  color: #255380;
+}
+
+.sidebar {
+  width: 250px;
+  min-width: 250px;
+}
+
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 15px 25px;
+
+  text-decoration: none;
+
+  color: #333;
+}
+
+.sidebar nav a.active {
+  background: #edf4fb;
+  color: #255380;
+}
+
+.sidebar nav a:hover {
+  background: #f3f6fb;
+}
+
+.sidebar nav a.active {
+  background: #edf4fb;
+
+  color: #255380;
+}
+
+/* ==========================
+   MAIN
+========================== */
+
+.main {
+  flex: 1;
+}
+
+/* ==========================
+   TOPO
+========================== */
+
+.topbar {
+  background: white;
+
+  padding: 20px 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  border-bottom: 1px solid #ddd;
+}
+
+#toggleMenu {
+  background: none;
+
+  border: none;
+
+  cursor: pointer;
+
+  font-size: 22px;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero {
+  padding: 35px 40px 10px;
+}
+
+.hero h1 {
+  color: #255380;
+
+  font-size: 30px;
+
+  margin-bottom: 8px;
+}
+
+.hero p {
+  color: #666;
+}
+
+/* ==========================
+   ABAS
+========================== */
+
+.tabs {
+  padding: 25px 40px;
+
+  display: flex;
+
+  gap: 15px;
+}
+
+.tab {
+  background: white;
+
+  border: none;
+
+  padding: 12px 35px;
+
+  border-radius: 30px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.tab:hover {
+  background: #edf4fb;
+}
+
+.tab.active {
+  background: #255380;
+
+  color: white;
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+/* ==========================
+   LAYOUT MATCH
+========================== */
+
+.match-layout {
+  padding: 0 40px 30px;
+
+  display: grid;
+
+  grid-template-columns: 2fr 1fr;
+
+  gap: 25px;
+}
+
+/* ==========================
+   CARD FORM
+========================== */
+
+.card {
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 18px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.card h3 {
+  color: #255380;
+
+  margin-bottom: 5px;
+}
+
+.subtitulo {
+  display: block;
+
+  color: #777;
+
+  margin-bottom: 25px;
+}
+
+/* ==========================
+   CAMPOS
+========================== */
+
+.campo {
+  margin-bottom: 20px;
+}
+
+.campo label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-weight: bold;
+
+  color: #333;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+
+  padding: 14px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  background: white;
+}
+
+.campo textarea {
+  resize: none;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  border-color: #255380;
+}
+
+/* ==========================
+   DIAS DISPONÍVEIS
+========================== */
+
+.dias {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.dias label {
+  background: #edf4fb;
+
+  color: #255380;
+
+  padding: 10px 15px;
+
+  border-radius: 20px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+}
+
+.dias input {
+  width: auto;
+
+  margin-right: 5px;
+}
+
+/* ==========================
+   CARD LATERAL
+========================== */
+
+.info-card {
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 18px;
+
+  height: fit-content;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.info-card h3 {
+  color: #255380;
+
+  margin-bottom: 20px;
+}
+
+.info-card ul {
+  list-style: none;
+}
+
+.info-card li {
+  margin-bottom: 15px;
+
+  color: #555;
+}
+
+/* ==========================
+   BOTÕES
+========================== */
+
+.actions {
+  padding: 0 40px 40px;
+
+  display: flex;
+
+  gap: 15px;
+}
+
+.btn-primary,
+.btn-secondary {
+  flex: 1;
+
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-size: 16px;
+}
+
+.btn-primary {
+  background: #255380;
+
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1d4569;
+}
+
+.btn-secondary {
+  background: #ddd;
+
+  color: #333;
+}
+
+/* ==========================
+   RESPONSIVO
+========================== */
+
+@media (max-width: 900px) {
+  .match-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .sidebar {
+    position: fixed;
+
+    height: 100%;
+
+    z-index: 100;
+  }
+
+  .tabs {
+    flex-direction: column;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}

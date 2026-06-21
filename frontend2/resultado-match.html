@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Resultado dos Matches | DUO
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/resultado-match.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- MENU -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+            DUO
+        </div>
+
+        <nav>
+
+    <a href="dashboard.html">
+        <i class="fa-solid fa-house"></i>
+        <span>Início</span>
+    </a>
+
+    <a href="matches.html" class="active">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Buscar Matches</span>
+    </a>
+
+    <a href="agendamentos.html">
+        <i class="fa-solid fa-calendar"></i>
+        <span>Agendamentos</span>
+    </a>
+
+    <a href="aulas.html">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>Aulas</span>
+    </a>
+
+    <a href="amigos.html">
+        <i class="fa-solid fa-user-group"></i>
+        <span>Amigos</span>
+    </a>
+
+    <a href="chat.html">
+        <i class="fa-regular fa-message"></i>
+        <span>Mensagens</span>
+    </a>
+
+    <a href="progresso.html">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Progresso</span>
+    </a>
+
+    <a href="perfil.html">
+        <i class="fa-regular fa-user"></i>
+        <span>Perfil</span>
+    </a>
+
+    <a href="configuracoes.html">
+        <i class="fa-solid fa-gear"></i>
+        <span>Configurações</span>
+    </a>
+
+</nav>
+
+    </aside>
+
+    <!-- CONTEÚDO -->
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <button id="toggleMenu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <h2>
+                Resultado dos Matches
+            </h2>
+
+        </header>
+
+        <!-- FILTROS -->
+
+        <section class="busca-info">
+
+            <div class="info-card">
+
+                <h3>
+                    Sua Busca
+                </h3>
+
+                <div id="dadosBusca">
+                </div>
+
+                <button
+                    class="btn-voltar"
+                    onclick="window.location.href='matches.html'">
+
+                    Alterar Busca
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- RESULTADOS -->
+
+        <section class="resultados">
+
+            <div id="listaMatches">
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/resultado-match.js"></script>
+
+</body>
+</html>

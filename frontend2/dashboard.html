@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | DUO</title>
+
+  <link rel="stylesheet" href="css/dashboard.css">
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Sidebar -->
+
+  <aside class="sidebar" id="sidebar">
+
+    <div class="logo">
+      DUO
+    </div>
+
+    <nav>
+
+      <a href="dashboard.html" class="active">
+        <i class="fa-solid fa-house"></i>
+        Início
+      </a>
+
+      <a href="matches.html">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        Buscar Matches
+      </a>
+
+      <a href="agendamentos.html">
+        <i class="fa-solid fa-calendar"></i>
+        Agendamentos
+      </a>
+
+      <a href="aulas.html">
+        <i class="fa-solid fa-graduation-cap"></i>
+        Aulas
+      </a>
+
+      <a href="amigos.html">
+        <i class="fa-solid fa-user-group"></i>
+        Amigos
+      </a>
+
+      <a href="mensagens.html">
+        <i class="fa-regular fa-message"></i>
+        Mensagens
+      </a>
+
+      <a href="progresso.html">
+        <i class="fa-solid fa-chart-line"></i>
+        Progresso
+      </a>
+
+      <a href="perfil.html">
+        <i class="fa-regular fa-user"></i>
+        Perfil
+      </a>
+
+      <a href="configuracoes.html">
+        <i class="fa-solid fa-gear"></i>
+        Configurações
+      </a>
+
+    </nav>
+
+  </aside>
+
+  <!-- Conteúdo -->
+
+  <main class="main">
+
+    <!-- Topbar -->
+
+    <header class="topbar">
+
+      <div class="search-box">
+
+        <button class="menu-btn" id="toggleMenu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <input
+          type="text"
+          placeholder="Buscar..."
+        >
+
+      </div>
+
+      <div class="user-area">
+
+        <button class="notification">
+          <i class="fa-regular fa-bell"></i>
+        </button>
+
+        <div class="user-info">
+
+          <img
+            id="fotoUsuario"
+            src="https://i.pravatar.cc/100"
+            alt="Usuário"
+          >
+
+          <div>
+
+            <h4 id="nomeUsuario">
+              Carregando...
+            </h4>
+
+            <p id="tipoUsuario">
+              Usuário
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </header>
+
+    <!-- Welcome -->
+
+    <section class="welcome">
+
+      <h1 id="tituloBoasVindas">
+        Olá!
+      </h1>
+
+      <p>
+        O que você está estudando hoje?
+      </p>
+
+    </section>
+
+    <!-- Cards -->
+
+    <section class="cards-principais">
+
+      <div class="card">
+
+        <h3>Última aula</h3>
+
+        <h4 id="ultimaAula">
+          Nenhuma aula registrada
+        </h4>
+
+        <p id="ultimoProfessor">
+          -
+        </p>
+
+        <button>
+          Marcar novamente
+        </button>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Próximo agendamento</h3>
+
+        <div class="agendamento">
+
+          <img
+            id="fotoProfessor"
+            src="https://i.pravatar.cc/80"
+            alt=""
+          >
+
+          <div>
+
+            <p id="proximaData">
+              Nenhum agendamento
+            </p>
+
+            <strong id="proximaMateria">
+              -
+            </strong>
+
+            <span id="proximoProfessor">
+              -
+            </span>
+
+          </div>
+
+        </div>
+
+        <button>
+          Ver detalhes
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- Ações -->
+
+    <section class="acoes-rapidas">
+
+      <div class="action-card">
+
+        <i class="fa-solid fa-compass"></i>
+
+        <h4>Buscar Match</h4>
+
+        <p>Encontre parceiros de estudo.</p>
+
+      </div>
+
+      <div class="action-card">
+
+        <i class="fa-solid fa-calendar-days"></i>
+
+        <h4>Criar Agendamento</h4>
+
+        <p>Agende aulas rapidamente.</p>
+
+      </div>
+
+      <div class="action-card">
+
+        <i class="fa-regular fa-clock"></i>
+
+        <h4>Aulas Agendadas</h4>
+
+        <p>Visualize seus horários.</p>
+
+      </div>
+
+      <div class="action-card">
+
+        <i class="fa-solid fa-user-group"></i>
+
+        <h4>Amigos</h4>
+
+        <p>Veja suas conexões.</p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<script type="module" src="js/dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Buscar Matches | DUO
+    </title>
+
+
+    <link
+        rel="stylesheet"
+        href="css/matches.css">
+
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- MENU -->
+
+<aside
+    class="sidebar"
+    id="sidebar">
+
+
+    <div class="logo">
+
+        DUO
+
+    </div>
+
+
+<nav>
+
+    <a href="dashboard.html">
+        <i class="fa-solid fa-house"></i>
+        <span>Início</span>
+    </a>
+
+    <a href="matches.html" class="active">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Buscar Matches</span>
+    </a>
+
+    <a href="agendamentos.html">
+        <i class="fa-solid fa-calendar"></i>
+        <span>Agendamentos</span>
+    </a>
+
+    <a href="aulas.html">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>Aulas</span>
+    </a>
+
+    <a href="amigos.html">
+        <i class="fa-solid fa-user-group"></i>
+        <span>Amigos</span>
+    </a>
+
+    <a href="chat.html">
+        <i class="fa-regular fa-message"></i>
+        <span>Mensagens</span>
+    </a>
+
+    <a href="progresso.html">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Progresso</span>
+    </a>
+
+    <a href="perfil.html">
+        <i class="fa-regular fa-user"></i>
+        <span>Perfil</span>
+    </a>
+
+    <a href="configuracoes.html">
+        <i class="fa-solid fa-gear"></i>
+        <span>Configurações</span>
+    </a>
+
+</nav>
+
+
+</aside>
+
+
+
+
+
+<!-- CONTEUDO -->
+
+<main class="main">
+
+
+
+<header class="topbar">
+
+
+<button id="toggleMenu">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+
+<h2>
+Buscar Matches
+</h2>
+
+
+</header>
+
+
+
+
+
+<section class="hero">
+
+
+<h1>
+Encontre seu Match de Estudos
+</h1>
+
+
+<p>
+
+Conecte-se com pessoas que possuem objetivos compatíveis.
+
+</p>
+
+
+</section>
+
+
+
+
+
+<!-- ABAS -->
+
+
+<section class="tabs">
+
+
+<button
+class="tab active"
+data-tab="aluno">
+
+Aluno
+
+</button>
+
+
+
+<button
+class="tab"
+data-tab="professor">
+
+Professor
+
+</button>
+
+
+</section>
+
+
+
+
+
+
+<!-- ALUNO -->
+
+
+<section
+id="aluno"
+class="tab-pane active">
+
+
+<div class="match-layout">
+
+
+<div class="card">
+
+
+<h3>
+Encontrar meu Match
+</h3>
+
+
+<p class="subtitulo">
+
+Informe suas preferências de aprendizado
+
+</p>
+
+
+
+
+
+<div class="campo">
+
+
+<label>
+
+O que deseja estudar?
+
+</label>
+
+
+<input
+type="text"
+id="materiaAluno"
+placeholder="Ex: Inglês, Matemática, História">
+
+
+</div>
+
+
+
+
+
+<div class="campo">
+
+
+<label>
+
+Nível desejado
+
+</label>
+
+
+<select id="nivelAluno">
+
+
+<option>
+Iniciante
+</option>
+
+
+<option>
+Intermediário
+</option>
+
+
+<option>
+Avançado
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+
+<div class="campo">
+
+
+<label>
+
+Dias disponíveis
+
+</label>
+
+
+<div class="dias">
+
+
+<label>
+<input type="checkbox" value="Seg">
+Seg
+</label>
+
+
+<label>
+<input type="checkbox" value="Ter">
+Ter
+</label>
+
+
+<label>
+<input type="checkbox" value="Qua">
+Qua
+</label>
+
+
+<label>
+<input type="checkbox" value="Qui">
+Qui
+</label>
+
+
+<label>
+<input type="checkbox" value="Sex">
+Sex
+</label>
+
+
+<label>
+<input type="checkbox" value="Sab">
+Sáb
+</label>
+
+
+<label>
+<input type="checkbox" value="Dom">
+Dom
+</label>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="campo">
+
+
+<label>
+
+Período
+
+</label>
+
+
+<select id="periodoAluno">
+
+
+<option>
+Manhã
+</option>
+
+
+<option>
+Tarde
+</option>
+
+
+<option>
+Noite
+</option>
+
+
+<option>
+Flexível
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+
+<div class="campo">
+
+
+<label>
+
+Sobre você
+
+</label>
+
+
+<textarea
+id="descricaoAluno"
+rows="4"
+placeholder="Conte seus objetivos">
+</textarea>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<aside class="info-card">
+
+
+<h3>
+
+Dicas para melhores Matches
+
+</h3>
+
+
+<ul>
+
+<li>
+Complete seu perfil
+</li>
+
+
+<li>
+Informe seus horários reais
+</li>
+
+
+<li>
+Explique seus objetivos
+</li>
+
+
+<li>
+Mantenha contato ativo
+</li>
+
+
+</ul>
+
+
+</aside>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- PROFESSOR -->
+
+
+<section
+id="professor"
+class="tab-pane">
+
+
+
+<div class="match-layout">
+
+
+<div class="card">
+
+
+
+<h3>
+
+Perfil Professor
+
+</h3>
+
+
+<p class="subtitulo">
+
+Configure suas informações de ensino
+
+</p>
+
+
+
+
+<div class="campo">
+
+
+<label>
+
+O que você domina?
+
+</label>
+
+
+
+<input
+type="text"
+id="materiaProfessor"
+placeholder="Ex: Física, Inglês, Música">
+
+
+</div>
+
+
+
+
+
+<div class="campo">
+
+
+<label>
+
+Nível de ensino
+
+</label>
+
+
+
+<select id="nivelProfessor">
+
+
+<option>
+Iniciante
+</option>
+
+
+<option>
+Intermediário
+</option>
+
+
+<option>
+Avançado
+</option>
+
+
+</select>
+
+
+
+</div>
+
+
+
+
+
+<div class="campo">
+
+
+<label>
+
+Dias disponíveis
+
+</label>
+
+
+<div class="dias">
+
+
+<label><input type="checkbox">Seg</label>
+
+<label><input type="checkbox">Ter</label>
+
+<label><input type="checkbox">Qua</label>
+
+<label><input type="checkbox">Qui</label>
+
+<label><input type="checkbox">Sex</label>
+
+<label><input type="checkbox">Sáb</label>
+
+<label><input type="checkbox">Dom</label>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="campo">
+
+
+<label>
+
+Período
+
+</label>
+
+
+<select id="periodoProfessor">
+
+
+<option>Manhã</option>
+
+<option>Tarde</option>
+
+<option>Noite</option>
+
+<option>Flexível</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+
+<div class="campo">
+
+
+<label>
+
+Sobre você
+
+</label>
+
+
+<textarea
+id="descricaoProfessor"
+rows="4"
+placeholder="Explique sua forma de ensinar">
+</textarea>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<aside class="info-card">
+
+
+<h3>
+
+Resumo Professor
+
+</h3>
+
+
+<ul>
+
+
+<li>
+Matérias ensinadas
+</li>
+
+
+<li>
+Nível atendido
+</li>
+
+
+<li>
+Disponibilidade semanal
+</li>
+
+
+<li>
+Período escolhido
+</li>
+
+
+
+</ul>
+
+
+</aside>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<div class="actions">
+
+
+<button
+class="btn-secondary"
+id="btnLimpar">
+
+Limpar
+
+</button>
+
+<button
+class="btn-primary"
+id="btnBuscar">
+
+Buscar Matches
+
+</button>
+
+</div>
+
+</main>
+</div>
+
+<script src="js/matches.js"></script>
+
+</body>
+</html>

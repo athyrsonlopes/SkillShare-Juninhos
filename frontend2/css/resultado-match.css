@@ -1,0 +1,359 @@
+/* ==========================
+   RESET
+========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f7fa;
+}
+
+/* ==========================
+   ESTRUTURA
+========================== */
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ==========================
+   SIDEBAR
+========================== */
+
+.sidebar {
+  width: 250px;
+  min-width: 250px;
+
+  background: white;
+
+  border-right: 1px solid #ddd;
+
+  transition: 0.3s;
+
+  overflow: hidden;
+}
+
+.sidebar.closed {
+  width: 0;
+  min-width: 0;
+
+  border: none;
+}
+
+.logo {
+  padding: 25px;
+
+  font-size: 32px;
+  font-weight: bold;
+
+  color: #255380;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 15px 25px;
+
+  text-decoration: none;
+
+  color: #333;
+
+  transition: 0.3s;
+}
+
+.sidebar nav a i {
+  width: 18px;
+  text-align: center;
+}
+
+.sidebar nav a:hover {
+  background: #f3f6fb;
+}
+
+.sidebar nav a.active {
+  background: #edf4fb;
+  color: #255380;
+}
+
+/* ==========================
+   MAIN
+========================== */
+
+.main {
+  flex: 1;
+}
+
+/* ==========================
+   TOPBAR
+========================== */
+
+.topbar {
+  background: white;
+
+  padding: 20px 30px;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  border-bottom: 1px solid #ddd;
+}
+
+#toggleMenu {
+  background: none;
+  border: none;
+
+  font-size: 22px;
+
+  cursor: pointer;
+}
+
+/* ==========================
+   CARD BUSCA
+========================== */
+
+.busca-info {
+  padding: 25px 30px;
+}
+
+.info-card {
+  background: white;
+
+  max-width: 700px;
+
+  border-radius: 14px;
+
+  padding: 20px;
+
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.info-card h3 {
+  color: #255380;
+
+  margin-bottom: 15px;
+}
+
+#dadosBusca {
+  margin-bottom: 18px;
+
+  color: #555;
+
+  line-height: 1.8;
+}
+
+.btn-voltar {
+  border: none;
+
+  background: #255380;
+
+  color: white;
+
+  padding: 10px 16px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+/* ==========================
+   RESULTADOS
+========================== */
+
+.resultados {
+  padding: 0 30px 40px;
+}
+
+#listaMatches {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+  gap: 16px;
+}
+
+/* ==========================
+   CARD MATCH
+========================== */
+
+.match-card {
+  background: white;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+
+  transition: 0.3s;
+}
+
+.match-card:hover {
+  transform: translateY(-3px);
+}
+
+/* ==========================
+   TOPO CARD
+========================== */
+
+.match-top {
+  text-align: center;
+
+  padding: 18px;
+}
+
+.match-top img {
+  width: 80px;
+  height: 80px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  margin-bottom: 12px;
+}
+
+.match-top h3 {
+  font-size: 18px;
+
+  color: #255380;
+
+  margin-bottom: 4px;
+}
+
+.match-top span {
+  display: inline-block;
+
+  background: #edf4fb;
+
+  color: #255380;
+
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+}
+
+/* ==========================
+   CORPO CARD
+========================== */
+
+.match-body {
+  padding: 0 18px 18px;
+}
+
+.match-body p {
+  margin-bottom: 8px;
+
+  color: #555;
+
+  font-size: 14px;
+}
+
+/* ==========================
+   COMPATIBILIDADE
+========================== */
+
+.compatibilidade {
+  margin-top: 15px;
+}
+
+.compatibilidade strong {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-size: 14px;
+
+  color: #255380;
+}
+
+.progress {
+  width: 100%;
+
+  height: 6px;
+
+  background: #ddd;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+
+  background: #255380;
+}
+
+/* ==========================
+   AÇÕES
+========================== */
+
+.match-actions {
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 16px;
+}
+
+.match-actions button {
+  flex: 1;
+
+  border: none;
+
+  padding: 10px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.btn-perfil {
+  background: #255380;
+
+  color: white;
+}
+
+.btn-conectar {
+  background: #edf4fb;
+
+  color: #255380;
+}
+
+/* ==========================
+   RESPONSIVO
+========================== */
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+
+    height: 100%;
+
+    z-index: 100;
+  }
+
+  #listaMatches {
+    grid-template-columns: 1fr;
+  }
+}

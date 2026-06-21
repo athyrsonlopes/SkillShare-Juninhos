@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Progresso | DUO</title>
+
+    <link rel="stylesheet" href="css/progresso.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <aside class="sidebar" id="sidebar">
+        <div class="logo">DUO</div>
+
+        <nav>
+          <a href="dashboard.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Início</span>
+          </a>
+
+          <a href="matches.html">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Buscar Matches</span>
+          </a>
+
+          <a href="agendamentos.html">
+            <i class="fa-solid fa-calendar"></i>
+            <span>Agendamentos</span>
+          </a>
+
+          <a href="aulas.html">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>Aulas</span>
+          </a>
+
+          <a href="amigos.html">
+            <i class="fa-solid fa-user-group"></i>
+            <span>Amigos</span>
+          </a>
+
+          <a href="mensagens.html">
+            <i class="fa-regular fa-message"></i>
+            <span>Mensagens</span>
+          </a>
+
+          <a href="progresso.html" class="active">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Progresso</span>
+          </a>
+
+          <a href="perfil.html">
+            <i class="fa-regular fa-user"></i>
+            <span>Perfil</span>
+          </a>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div class="left-top">
+            <button id="toggleMenu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <h2>Progresso</h2>
+          </div>
+        </header>
+
+        <section class="hero">
+          <h1>Seu Progresso</h1>
+
+          <p>Acompanhe sua evolução dentro da DUO.</p>
+        </section>
+
+        <section class="stats">
+          <div class="stat-card">
+            <h2 id="horasEstudadas">86h</h2>
+
+            <p>Horas Estudadas</p>
+          </div>
+
+          <div class="stat-card">
+            <h2 id="aulasConcluidas">24</h2>
+
+            <p>Aulas Concluídas</p>
+          </div>
+
+          <div class="stat-card">
+            <h2 id="matchesRealizados">12</h2>
+
+            <p>Matches</p>
+          </div>
+
+          <div class="stat-card">
+            <h2 id="nivelAtual">Intermediário</h2>
+
+            <p>Nível Atual</p>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Evolução por Área</h2>
+
+          <div id="listaProgresso"></div>
+        </section>
+
+        <section class="card">
+          <div class="meta-header">
+            <h2>Meta Semanal</h2>
+
+            <button id="btnEditarMeta" class="btn-meta">Editar Meta</button>
+          </div>
+
+          <p id="textoMeta">0h de 10h concluídas</p>
+
+          <div class="progress">
+            <div id="barraMeta" class="progress-fill"></div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Atividade Recente</h2>
+
+          <ul id="atividadeRecente"></ul>
+        </section>
+
+        /// Modal para definir meta semanal
+
+        <div id="modalMeta" class="modal">
+          <div class="modal-content">
+            <h2>Definir Meta Semanal</h2>
+
+            <p>Quantas horas deseja estudar por semana?</p>
+
+            <input type="number" id="inputMeta" min="1" max="100" />
+
+            <div class="modal-actions">
+              <button id="cancelarMeta" class="btn-cancelar">Cancelar</button>
+
+              <button id="salvarMeta" class="btn-salvar">Salvar</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/progresso.js"></script>
+  </body>
+</html>

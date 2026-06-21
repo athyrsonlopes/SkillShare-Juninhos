@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Aulas | DUO</title>
+
+    <link rel="stylesheet" href="css/aulas.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <aside class="sidebar" id="sidebar">
+        <div class="logo">DUO</div>
+
+        <nav>
+          <a href="dashboard.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Início</span>
+          </a>
+
+          <a href="matches.html">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Buscar Matches</span>
+          </a>
+
+          <a href="agendamentos.html">
+            <i class="fa-solid fa-calendar"></i>
+            <span>Agendamentos</span>
+          </a>
+
+          <a href="aulas.html" class="active">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>Aulas</span>
+          </a>
+
+          <a href="amigos.html">
+            <i class="fa-solid fa-user-group"></i>
+            <span>Amigos</span>
+          </a>
+
+          <a href="mensagens.html">
+            <i class="fa-regular fa-message"></i>
+            <span>Mensagens</span>
+          </a>
+
+          <a href="progresso.html">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Progresso</span>
+          </a>
+
+          <a href="perfil.html">
+            <i class="fa-regular fa-user"></i>
+            <span>Perfil</span>
+          </a>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div class="left-top">
+            <button id="toggleMenu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <h2>Aulas</h2>
+          </div>
+        </header>
+
+        <section class="hero">
+          <h1>Minhas Aulas</h1>
+
+          <p>Acompanhe suas aulas e evolução.</p>
+        </section>
+
+        <section class="tabs">
+          <button class="tab active" data-tab="ativas">Aulas Ativas</button>
+
+          <button class="tab" data-tab="concluidas">Concluídas</button>
+        </section>
+
+        <section id="ativas" class="tab-pane active">
+          <div id="listaAtivas"></div>
+        </section>
+
+        <section id="concluidas" class="tab-pane">
+          <div id="listaConcluidas"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/aulas.js"></script>
+  </body>
+</html>

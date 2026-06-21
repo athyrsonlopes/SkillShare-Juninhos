@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Amigos | DUO</title>
+
+    <link rel="stylesheet" href="css/amigos.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- MENU -->
+
+      <aside class="sidebar" id="sidebar">
+        <div class="logo">DUO</div>
+
+        <nav>
+          <a href="dashboard.html">
+            <i class="fa-solid fa-house"></i>
+
+            <span> Início </span>
+          </a>
+
+          <a href="matches.html">
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <span> Buscar Matches </span>
+          </a>
+
+          <a href="agendamentos.html">
+            <i class="fa-solid fa-calendar"></i>
+
+            <span> Agendamentos </span>
+          </a>
+
+          <a href="aulas.html">
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <span> Aulas </span>
+          </a>
+
+          <a href="amigos.html" class="active">
+            <i class="fa-solid fa-user-group"></i>
+
+            <span> Amigos </span>
+          </a>
+
+          <a href="mensagens.html">
+            <i class="fa-regular fa-message"></i>
+
+            <span> Mensagens </span>
+          </a>
+
+          <a href="progresso.html">
+            <i class="fa-solid fa-chart-line"></i>
+
+            <span> Progresso </span>
+          </a>
+
+          <a href="perfil.html">
+            <i class="fa-regular fa-user"></i>
+
+            <span> Perfil </span>
+          </a>
+
+          <a href="configuracoes.html">
+            <i class="fa-solid fa-gear"></i>
+
+            <span> Configurações </span>
+          </a>
+        </nav>
+      </aside>
+
+      <!-- CONTEÚDO -->
+
+      <main class="main">
+        <header class="topbar">
+          <div class="left-top">
+            <button id="toggleMenu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <h2>Amigos</h2>
+          </div>
+        </header>
+
+        <section class="hero">
+          <h1>Meus Amigos</h1>
+
+          <p>Gerencie alunos e professores conectados com você.</p>
+        </section>
+
+        <section class="tabs">
+          <button class="tab active" data-tab="conexoes">Conexões</button>
+
+          <button class="tab" data-tab="recebidos">Recebidos</button>
+
+          <button class="tab" data-tab="enviados">Enviados</button>
+        </section>
+
+        <section id="conexoes" class="tab-pane active">
+          <div id="listaConexoes"></div>
+        </section>
+
+        <section id="recebidos" class="tab-pane">
+          <div id="listaRecebidos"></div>
+        </section>
+
+        <section id="enviados" class="tab-pane">
+          <div id="listaEnviados"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/amigos.js"></script>
+  </body>
+</html>
