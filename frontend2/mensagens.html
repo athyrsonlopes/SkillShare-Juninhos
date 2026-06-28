@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Mensagens | DUO</title>
+
+    <link rel="stylesheet" href="css/mensagens.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- SIDEBAR -->
+
+      <aside class="sidebar" id="sidebar">
+        <div class="logo">DUO</div>
+
+        <nav>
+          <a href="dashboard.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Início</span>
+          </a>
+
+          <a href="matches.html">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Buscar Matches</span>
+          </a>
+
+          <a href="agendamentos.html">
+            <i class="fa-solid fa-calendar"></i>
+            <span>Agendamentos</span>
+          </a>
+
+          <a href="aulas.html">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>Aulas</span>
+          </a>
+
+          <a href="amigos.html">
+            <i class="fa-solid fa-user-group"></i>
+            <span>Amigos</span>
+          </a>
+
+          <a href="mensagens.html" class="active">
+            <i class="fa-regular fa-message"></i>
+            <span>Mensagens</span>
+          </a>
+
+          <a href="progresso.html">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Progresso</span>
+          </a>
+
+          <a href="perfil.html">
+            <i class="fa-regular fa-user"></i>
+            <span>Perfil</span>
+          </a>
+        </nav>
+      </aside>
+
+      <!-- MAIN -->
+
+      <main class="main">
+        <!-- TOPO -->
+
+        <header class="topbar">
+          <div class="left-top">
+            <button id="toggleMenu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <h2>Mensagens</h2>
+          </div>
+        </header>
+
+        <!-- CHAT -->
+
+        <div class="chat-container">
+          <!-- CONVERSAS -->
+
+          <aside class="chat-sidebar">
+            <h2>Conversas</h2>
+
+            <div class="search-chat">
+              <i class="fa-solid fa-magnifying-glass"></i>
+
+              <input type="text" placeholder="Buscar conversa..." />
+            </div>
+
+            <div id="listaConversas"></div>
+          </aside>
+
+          <!-- CHAT PRINCIPAL -->
+
+          <section class="chat-main">
+            <!-- CABEÇALHO -->
+
+            <div class="chat-header">
+              <div class="chat-user">
+                <img id="fotoContato" src="https://i.pravatar.cc/150?img=12" />
+
+                <div>
+                  <h3 id="nomeContato">Carlos Mendes</h3>
+
+                  <span id="statusContato"> Online </span>
+                </div>
+              </div>
+
+              <button class="btn-opcoes">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </button>
+            </div>
+
+            <!-- MENSAGENS -->
+
+            <div class="chat-messages" id="chatMessages"></div>
+
+            <!-- INPUT -->
+
+            <div class="chat-input">
+              <input
+                type="text"
+                id="mensagemInput"
+                placeholder="Digite sua mensagem..."
+              />
+
+              <!-- PDF -->
+
+              <label for="pdfInput" class="btn-pdf">
+                <i class="fa-solid fa-paperclip"></i>
+              </label>
+
+              <input type="file" id="pdfInput" accept=".pdf" hidden />
+
+              <!-- ENVIAR -->
+
+              <button id="btnEnviar" class="btn-enviar">
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/mensagens.js"></script>
+  </body>
+</html>
