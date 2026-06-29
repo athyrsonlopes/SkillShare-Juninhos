@@ -26,7 +26,7 @@ Este projeto nasceu dentro do ecossistema da **Comunidade Juninhos**, no Squad 1
 
 O projeto é um **monorepo** dividido em duas pastas independentes (`backend/` e `frontend2/`), cada uma com seu próprio deploy na Vercel:
 
-* **Frontend:** HTML, CSS e JavaScript puro (sem framework/bundler)
+* **Frontend:** HTML, CSS e JavaScript
 * **Backend:** Node.js + Express + TypeScript
 * **Banco de Dados:** PostgreSQL, hospedado no Supabase
 * **ORM:** Prisma
