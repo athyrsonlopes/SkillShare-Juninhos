@@ -100,7 +100,8 @@ nav a {
 
 .hero-image img {
   max-width: 100%;
-  width: 350px;
+  width: 500px;
+  height: auto;
 }
 
 .features {
