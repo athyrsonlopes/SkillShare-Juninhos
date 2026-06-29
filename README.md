@@ -12,9 +12,9 @@
 
 ## 📝 Sobre o Projeto
 
-Sistema de agendamento de mentorias e estudos em dupla para facilitar o aprendizado colaborativo — em qualquer área de conhecimento.
+Sistema de agendamento de mentorias e estudos em dupla para facilitar o aprendizado colaborativo em qualquer área de conhecimento.
 
-O nome **DUO** carrega dois significados: a dupla de pessoas que se conecta para aprender e ensinar, e a sigla de **D**esenvolvimento, **U**nião e **O**rientação — os três pilares do projeto.
+O nome **DUO** carrega dois significados: a dupla de pessoas que se conecta para aprender e ensinar, e a sigla de **D**esenvolvimento, **U**nião e **O**rientação que são os três pilares do projeto.
 
 Este projeto nasceu dentro do ecossistema da **Comunidade Juninhos**, no Squad 12, mas é um produto independente: não possui vínculo institucional com a comunidade, que atuou aqui apenas como ambiente de formação e colaboração entre os membros do squad.
 
